@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Saltar : MonoBehaviour {
-
+    [Header("Rigidbody")]
     [SerializeField] Rigidbody rb;
     [SerializeField] float fuerza;
     [SerializeField] AudioSource sonidosalto;

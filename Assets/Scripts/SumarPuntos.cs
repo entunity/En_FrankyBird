@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SumarPuntos : MonoBehaviour {
 
     [SerializeField] Text texto;
+    [SerializeField] AudioSource sonidosumar;
     bool cruzando;
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class SumarPuntos : MonoBehaviour {
         {
             Datos.puntuacion += 1;
             texto.text = "Puntuacion: " + Datos.puntuacion;
+            sonidosumar.Play();
             cruzando = true;
             
         }

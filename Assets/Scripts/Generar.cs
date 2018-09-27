@@ -5,14 +5,13 @@ using UnityEngine;
 public class Generar : MonoBehaviour {
 
     GameObject go;
-    public float time;
     [SerializeField] Transform tuberia;
     // Use this for initialization
     void Start () {
         //go = (GameObject)Resources.Load("Tuberias");
         //Instantiate(go, transform.position, transform.rotation);
 
-        InvokeRepeating("GenerarTuberia", 0, 3);
+        InvokeRepeating("GenerarTuberia", 0, Datos.ratioaparicion);
     }
 	
 	// Update is called once per frame
@@ -31,8 +30,8 @@ public class Generar : MonoBehaviour {
         {
             
             Instantiate(tuberia, transform.position + new Vector3(0f, Random.Range(-3.0f, 3.0f), 0f), Quaternion.identity);
-            Datos.velocidad += Time.deltaTime*10;
-            Debug.Log(Datos.velocidad);
+            Datos.velocidadtuberia += Time.deltaTime*10;
+            Debug.Log(Datos.velocidadtuberia);
 
         }
     }
