@@ -9,6 +9,8 @@ public class Muerte : MonoBehaviour {
     [SerializeField] GameObject panel;
     [SerializeField] Text puntuacion;
     [SerializeField] ParticleSystem particulas;
+    [SerializeField] AudioSource muertesonido;
+    [SerializeField] AudioClip muerte;
     // Use this for initialization
     void Start () {
 		
@@ -24,15 +26,17 @@ public class Muerte : MonoBehaviour {
 
         if (other.tag.Equals("Finish"))
         {
-           
+            muertesonido.clip = muerte;
             //Time.timeScale = 0F;
             Instantiate(particulas, transform.position, Quaternion.identity);
             //Destroy(this.gameObject);
+            muertesonido.Play();
             this.gameObject.SetActive(false);
             //Renderer rend = this.GetComponent<Renderer>();
             //rend.enabled = false;
             Datos.muerto = true;
             Invoke("MostrarInfo", 1f);
+            //"ddd";
             
 
 

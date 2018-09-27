@@ -6,6 +6,7 @@ public class Saltar : MonoBehaviour {
 
     [SerializeField] Rigidbody rb;
     [SerializeField] float fuerza;
+    [SerializeField] AudioSource sonidosalto;
     // Use this for initialization
     void Start () {
         rb = this.GetComponent<Rigidbody>();
@@ -18,6 +19,7 @@ public class Saltar : MonoBehaviour {
         if (Input.GetKeyDown("space"))
         {
             rb.AddForce(Vector3.up* fuerza);
+            sonidosalto.Play();
         }
     }
 }

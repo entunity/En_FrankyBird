@@ -27,7 +27,13 @@ public class Generar : MonoBehaviour {
     }*/
     void GenerarTuberia() {
         //Instantiate(go, transform.position, transform.rotation);
-        if(Datos.muerto!=true)
-        Instantiate(tuberia, transform.position+new Vector3(0f, Random.Range(-3.0f, 3.0f), 0f), Quaternion.identity);
+        if (Datos.muerto != true)
+        {
+            
+            Instantiate(tuberia, transform.position + new Vector3(0f, Random.Range(-3.0f, 3.0f), 0f), Quaternion.identity);
+            Datos.velocidad += Time.deltaTime*10;
+            Debug.Log(Datos.velocidad);
+
+        }
     }
 }

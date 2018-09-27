@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoverTuberia : MonoBehaviour {
-
-    [SerializeField] float velocidad = 4f;
+    
 	// Use this for initialization
 	void Start () {
 
@@ -15,10 +14,11 @@ public class MoverTuberia : MonoBehaviour {
         if (Datos.muerto != true) {
         this.transform.Translate(Vector3.left * Datos.velocidad * Time.deltaTime);
             
-    }
+
+        }
         if (this.transform.position.x <= -9f)
         {
-            Datos.velocidad += Time.deltaTime;
+            
             Destroy(this.gameObject);
         }
 	}
